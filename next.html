@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Memories</title>
+
+<link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="kuromi-bg">
+
+<audio id="bgMusicNext" loop preload="auto">
+    <source src="[FREE] Acoustic Guitar x Piano Type Beat  Pop Instrumental  when you so in love.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ===== TOP CHARACTER INTERACTION ===== -->
+<section class="top-section">
+
+
+    <img id="characterImg7" src="Picture7-Photoroom.png" class="character small" />
+
+
+    <p id="charText1">I wanted to show you something special…</p>
+    <button id="charBtn" onclick="continueText(); playNextMusic();">Okay</button>
+
+
+    <p id="charText2" class="hidden">
+    Everything below is for you. Scroll slowly.
+    </p>
+
+
+</section>
+
+
+<hr class="section-break" />
+
+
+<!-- ===== LETTER ===== -->
+<section class="letter-section">
+  <div id="letter" class="letter">
+    
+    <!-- WHITE COVER + HEART -->
+    <div id="letterCover" class="letter-cover">
+      <button id="heartBtn" class="heart" onclick="openLetter()">❤</button>
+    </div>
+
+    <!-- LETTER CONTENT -->
+    <div class="letter-content preformatted">
+To my Dearest Bebe
+
+Happy 2nd anniversary to us my langga!  
+Hindi man lang natin namalayan its already been that long since we've been together, sharing all those precious memories that I will always keep in a special place in my heart and mind. These two years have been nothing short of amazing. From those awkward moments when I was still courting you, to our first kiss, those unplanned dates and movie + ramen times we always did or even those small everyday moment that meant a lot to the countless things we share every day, I feel so grateful to have you by my side. You’ve taught me patience, love, and the beauty of sharing life with someone who truly understands and accepts me.
+Bebe, you are my safe place, my comfort, and my joy. Even in our quietest moments, just being near you fills me with peace. I love how we can talk about anything or even just sit in silence and feel connected. You make ordinary days feel extraordinary, and every moment with you is a treasure I want to hold onto forever.
+I know we’ve had our ups and downs, but even in the challenging times, I’ve learned to love you more deeply. You make me want to be a better person not just for myself, but for us, for what we are building together. Your love inspires me every day, and I cannot imagine my life without you in it.
+
+As we celebrate our 2nd year together, I just want you to know how much I truly love you. I promise to continue loving you with all my heart, to support you in every dream, to laugh with you in every joy, and to hold you close in every difficulty. You are my everything, Bebe, my best friend, my partner, my love.
+
+Here’s to us our past, our present, and all the amazing memories we will make together in the years to come. I love you more than words could ever express.
+
+Forever yours,
+your langga
+
+
+
+Below is some of the memories we have shared together.
+    </div>
+
+  </div>
+</section>
+
+<hr class="section-break" />
+
+
+<!-- ===== PHOTOS ===== -->
+<section class="photo-section">
+
+  <h2 class="memory-title">Our Memories</h2>
+
+  <div id="photoGrid" class="photo-grid">
+    <div class="photo-frame add-frame" onclick="triggerUpload()">+</div>
+  </div>
+
+  <!-- Ending text -->
+  <p class="ending-text">
+    To more years of laughters, tears, and love 💖
+  </p>
+
+  <input type="file" id="photoInput" accept="image/*" hidden />
+
+</section>
+
+
+
+
+<!-- ===== IMAGE VIEWER ===== -->
+<div id="viewer" class="viewer hidden">
+<button class="delete-btn" onclick="deleteCurrent()">🗑</button>
+<button class="close-btn" onclick="closeViewer()">✕</button>
+<img id="viewerImg" />
+</div>
+
+
+<script src="script.js"></script>
+
+<img src="source.gif" class="sticker top left">
+<img src="giphy.gif" class="sticker top right">
+<img src="f24a79f22c6eb633626d8314b0d7e5f9.gif" class="sticker bottom left">
+<img src="kuromi-gif-22.gif" class="sticker bottom right">
+
+</body>
+</html>

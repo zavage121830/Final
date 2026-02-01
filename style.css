@@ -1,0 +1,297 @@
+/* ===== ROOT & RESET ===== */
+:root {
+    --bg: #1c1b22;
+    --card: #2b2933;
+    --accent: #d9a7ff;
+    --text: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.kuromi-bg {
+  background:
+    radial-gradient(circle at 20% 15%, rgba(192,132,252,0.25), transparent 45%),
+    radial-gradient(circle at 80% 75%, rgba(255,155,210,0.18), transparent 45%),
+    #14121a;
+
+  min-height: 100vh;
+}
+
+.kuromi-bg::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Baloo 2', cursive;
+    overflow-x: hidden;
+}
+.main-page {
+  min-height: 100vh;   /* 🔑 THIS IS REQUIRED */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* vertical center */
+  align-items: center;      /* horizontal center */
+  text-align: center;
+  padding: 20px;
+}
+.character {
+  display: block;
+  align-self: center;   /* ✅ THIS is the key */
+  margin-bottom: 20px;
+}
+
+/* ===== FULL-SCREEN SECTIONS ===== */
+.top-section,
+.letter-section {
+    height: 100vh;         /* keep top and letter fullscreen */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* vertical center */
+    align-items: center;      /* horizontal center */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.photo-section {
+    height: auto;            /* allow height to expand with content */
+    width: 100%;
+    padding: 20px 0;         /* spacing top & bottom */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.memory-title {
+    font-size: 20px;
+    margin-bottom: 16px;
+    color: var(--text);
+}
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 90%;
+    justify-items: center;
+    padding-bottom: 20px;
+}
+/* ===== HIDDEN ===== */
+.hidden { display: none !important; }
+
+/* ===== CHARACTER ===== */
+.character-fullscreen {
+    max-width: 80%;
+    max-height: 70%;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+/* ===== DIALOGUE BOX ===== */
+.dialogue-container,
+.dialogue-box {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 400px;
+}
+
+/* ===== BUTTON ===== */
+button {
+    background: var(--accent);
+    border: none;
+    padding: 10px 24px;
+    border-radius: 999px;
+    font-family: 'Mochiy Pop One', sans-serif;
+    cursor: pointer;
+}
+
+/* ===== LETTER ===== */
+.letter-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.letter {
+    width: 90%;
+    max-width: 360px;
+    background: #f7f3ff;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* WHITE COVER WITH HEART */
+.letter-cover {
+    position: absolute;
+    inset: 0;                     /* cover entire letter */
+    background: white;            /* hide letter underneath */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.heart {
+    font-size: 48px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: red;
+    z-index: 11;
+    transition: transform 0.3s ease;
+}
+
+.heart:hover {
+    transform: scale(1.2);
+}
+
+/* LETTER CONTENT */
+.letter-content {
+    padding: 20px;
+    color: #000; /* black text for readability */
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: justify; /* justify text for nice alignment */
+    max-height: 400px;   /* adjust depending on your letter container */
+    overflow-y: auto;    /* allow vertical scrolling */
+}
+
+.preformatted {
+    white-space: pre-wrap; /* preserves line breaks and spaces */
+    text-align: left;       /* aligns text to the left */
+    font-size: 16px;
+    line-height: 1.5;
+    color: #000;
+}
+
+/* ===== SECTION BREAK ===== */
+.section-break {
+    border: none;
+    border-top: 2px solid var(--accent);
+    margin: 30px 0;
+    opacity: 0.6;
+}
+.sticker {
+  position: fixed;
+  width: 58px;
+  opacity: 0.75;
+  z-index: 50;
+  pointer-events: none; /* stickers won't block clicks */
+  filter: drop-shadow(0 4px 10px rgba(192,132,252,0.4));
+}
+
+/* POSITIONING */
+.sticker.top { top: 12px; }
+.sticker.bottom { bottom: 12px; }
+
+.sticker.left { left: 12px; }
+.sticker.right { right: 12px; }
+
+/* OPTIONAL: subtle tilt for personality */
+.sticker.top.left { transform: rotate(-6deg); }
+.sticker.top.right { transform: rotate(6deg); }
+.sticker.bottom.left { transform: rotate(4deg); }
+.sticker.bottom.right { transform: rotate(-4deg); }
+/* ===== PHOTO GRID ===== */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 90%;
+    justify-items: center;
+    padding-bottom: 20px;
+}
+
+.photo-frame {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border: 2px dashed var(--accent);
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.photo-section {
+    width: 100%;
+    padding: 20px 0 120px 0; /* extra bottom padding to allow scrolling past stickers */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+/* ===== IMAGE VIEWER ===== */
+.viewer {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 999;
+}
+
+.viewer img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 16px;
+}
+
+.close-btn, .delete-btn {
+    position: absolute;
+    top: 20px;
+    background: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.close-btn { right: 20px; }
+.delete-btn { right: 60px; }
+
+.ending-text {
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--accent);
+    text-align: center;
+    position: relative;
+    z-index: 10; /* above stickers */
+    padding: 8px 16px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+}
+
+/* ===== OPTIONAL: LETTER OPENING ANIMATION ===== */
+.letter.opening {
+    animation: openLetterAnim 0.5s forwards;
+}
+
+@keyframes openLetterAnim {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
