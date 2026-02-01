@@ -155,6 +155,7 @@ const defaultMedia = [
     { src: '35.jpeg', type: 'image' },
     { src: '36.jpeg', type: 'image' },
     { src: '37.jpeg', type: 'image' },
+    { src: '38.jpeg', type: 'image' },
     
 
 ];
@@ -281,4 +282,5 @@ function loadPhotos() {
 }
 
 // Load photos on page load
+
 window.onload = loadPhotos;
